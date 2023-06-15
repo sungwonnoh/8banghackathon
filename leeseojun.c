@@ -3,5 +3,5 @@
 
 int main(){
   
-  pritnf("fuck you");
+  printf("fuck you");
 }
