@@ -1,2 +1,2 @@
 # 8banghackathon
-#HUFSummer_Hackathon
+#HUFSummer_Hackathon 2nd
