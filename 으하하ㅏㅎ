@@ -1,60 +1,43 @@
-<!DOCTYPE html>
 
-<html>
+let i
+var fileContent = "apple-_-_-\nbanana";
+let input = "1.1."
+let before_sen
+let after_sen
+let call_sen
+import { writeFile } from "fs";
+fetch(src="TEXT.txt")
+.then(response => response.text())
+.then(contents => {
+    fileContent = contents;
+    console.log(fileContent);
+    console.log(`[!?{${input}}?!]`, typeof(`[!?{${input}}?!]`));
+    arr = fileContent.split("-_-_-\n");
+    console.log(arr, arr.length);
 
-    <head>
-
-        <title>PROTOTYPE</title>
-        <meta charset="utf-8">
-        
-    </head>
-
-    <body>
-
-        <script>
-            var fileContent;
-
-            fetch(src="TEXT")
-            .then(response => response.text())
-            .then(contents => {
-                fileContent = contents;
-                console.log(fileContent);
-            })
-            .catch(error => {
-                console.error('파일을 읽을 수 없습니다:', error);
+    for(i=0;i<arr.length;i++){
+        if (arr[i] === `[!?{${input}}?!]`){
+            before_sen = arr.slice(0,i+1);
+            after_sen = arr.slice(i+2,arr.length);
+            call_sen = "1"
+            console.log(before_sen)
+            console.log(call_sen)
+            console.log(after_sen)
+            arr1 = []
+            arr1[0] = before_sen.join("-_-_-\n")
+            arr1[1] = call_sen
+            arr1[2] = after_sen.join("-_-_-\n")
+            console.log(arr1.join("-_-_-\n"))
+            
+            writeFile("TEXT.txt", arr1.join("-_-_-\n"), encoding="utf-8", (err)=>{
+                if (err)
+                    console.log(err);
+                else{
+                    console.log("썼으")
+                }
             });
 
-            function updateFile() {
-                var textValue = document.getElementById("box").value;
-                
-                var fileData = new Blob([textValue], { type: 'text/plain' });
-                var formData = new FormData();
-                formData.append('file', fileData, "TEXT");
-                
-                fetch("TEXT", {
-                method: 'POST',
-                body: formData
-                })
-                .then(function(response) {
-                if (response.ok) {
-                    alert("파일이 성공적으로 수정되었습니다.");
-                } else {
-                    alert("파일 수정 중 오류가 발생했습니다.");
-                }
-                })
-                .catch(function(error) {
-                alert("파일 수정 중 오류가 발생했습니다.");
-                });
-            }
-            
-            
-            
-            
-        </script>
 
-        <h1> Hello World </h1>
-        <input type="text" id="box" />
-        <button onclick="updateFile()">제출</button>
-
-    </body>
-</html>
+        }
+    }
+})
