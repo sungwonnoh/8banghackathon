@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUFS-WIKI</title>
+    <title>HUFS-WiKi</title>
     <script src="https://kit.fontawesome.com/6a210a7025.js" crossorigin="anonymous"></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="./new_style.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
 </head>
 <body>
     <header>
         <div style="display: flex;">
             <img src="./logo.png" title="외대 로고" id="logo"/>
-            <h1>HUFS WIKI</h1>
+            <h1>HUFS WiKi</h1>
         </div>
         <nav>
-            <ul>
-                <li><a href="#">캠퍼스</a></li>
-                <li><a href="#">생활</a></li>
-                <li><a href="#">대학꿀팁</a></li>
+            <ul style="padding: 0;">
+                <li><i class="fa-solid fa-school"></i><a href="#"> 캠퍼스</a></li>
+                <li><i class="fa-solid fa-pencil"></i><a href="#"> 생활</a></li>
+                <li style="width: 100px;"><i class="fa-sharp fa-solid fa-circle-info"></i><a href="#"> 대학 꿀팁</a></li>
             </ul>
         </nav>
     </header>
     <section class="mainscreen">
-        <div class="icon">
-            <div>
-                <button class="icon1">
-                    <i class="fa-solid fa-school fa-beat fa-4x"></i>
-                </button>
-            </div>
-            <div>
-                <button class="icon2">
-                    <i class="fa-solid fa-pencil fa-beat fa-4x"></i>
-                </button>
-            </div>
-            <div>
-                <button class="icon3">
-                    <i class="fa-sharp fa-solid fa-circle-info fa-beat fa-4x"></i>
-                </button>
-            </div>
+        <div>
+            <button type="button" class="icon1" onclick = "location.href ='./WIKI/index.html' ">
+                <i class="fa-solid fa-school fa-beat fa-4x"></i>
+            </button>
         </div>
-       
+        <div>
+            <button type="button" class="icon2" onclick = "location.href ='./WIKI/index.html' ">
+                <i class="fa-solid fa-pencil fa-beat fa-4x"></i>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="icon3" onclick = "location.href ='./WIKI/index.html' ">
+                <i class="fa-sharp fa-solid fa-circle-info fa-beat fa-4x"></i>
+            </button>
+        </div>
+    </div>
     </section>
     <section class="mainscreen">
         <div>    
@@ -57,6 +59,6 @@
         <br>
         <small>Copyright ⓒ Hankuk University of Foreign Studies. All Rights Reserved.</small>
     </footer>
-    <script src="8bang.js"></script>
+
 </body>
 </html>
