@@ -3,7 +3,8 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
 .mainscreen{
     display: flex;
@@ -11,7 +12,7 @@ body{
     align-items: center;
     width: 800px;
     height: 350px;
-    margin: 20px;
+    margin: 30px;
     border: 2px solid gray;
 }
 
@@ -36,16 +37,64 @@ header {
     top: 0px; 
     color: white;
     background-color: rgb(0, 45, 86);
+    align-items: center;
 }
 header nav ul {
     display: flex;
     text-align: center;
 }
 header nav ul li {
+    font-size: 20px;
     list-style-type: none;
-    padding: 20px 10px;
-    width: 88px;
-    margin-right: 20px;
+    width: 100px;
+    margin-right: 50px;
+}
+.link li {
+    font-size: 20px;
+    list-style-type: none;
+    
+    margin: 20px 10px 10px 10px;
+    width:150px;
+    
+}
+#link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 20px;
+    margin: 20px;
+    width: 500px;
+    height: 250px;
+}
+#notice{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+    margin: 20px;
+    width: 1000px;
+    height: 250px;
+}
+.link-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 350px;
+    margin: 20px;
+
+}
+.link-section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 10%;
+    padding: 15px;
 }
 .icon{
     display: flex;
@@ -85,5 +134,4 @@ header nav ul li {
     border-radius: 25%;
     box-shadow: 5px 5px 5px gray;
 }
-
 
