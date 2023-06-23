@@ -36,21 +36,24 @@ header nav ul li {
     width: 88px;
 }
 
-.sidebar{
+.sidebar{ /*사이드바창*/
     width: 300px;
     height: 100%;
     background: rgb(198, 197, 197);
     position:fixed;
     top:0;
-    left: -300px;
+    right: -300px;
     z-index: 1;
-    transtion:all.35s;
+    transition:all.35s;
 }
-.sidebar-toggle{
+.sidebar-toggle{ /*버튼이름*/
     position: fixed;
     top: 2px;
     right: 30px;
     font-size:24px;
     cursor: pointer;
-
+    
+}
+.sidebar-open{
+    right: 0px;
 }
