@@ -5,10 +5,12 @@ body{
     align-items: center;
 }
 .mainscreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 800px;
     height: 400px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px;
     border: 2px solid gray;
 }
 
@@ -44,11 +46,38 @@ header nav ul li {
     width: 88px;
 }
 .icon{
-    margin: 30px;
-    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 20px;
+
 }
-.show-icon{
-    display: inline-block;
-    font-size: larger;
-    padding: 30px;
+.icon1{
+    width:200px;
+    height: 200px;
+    text-align: center;
+    margin: 10px;
+    background-color: transparent;
+    border-color: gray;
+    border-radius: 25%;
+}
+.icon2{
+    width:200px;
+    height: 200px;
+    text-align: center;
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 25%;
+    border-color: gray;
+}
+
+.icon3{
+    width:200px;
+    height: 200px;
+    text-align: center;
+    margin: 10px;
+    background-color: transparent;
+    border-color: gray;
+    border-radius: 25%;
 }
