@@ -1,7 +1,4 @@
-const toggleBtn = document.querySelector(".sidebar-toggle");/*토글은 껐다켰다 기능*/
-const sidebar = document.querySelector(".sidebar");/*사이드바요소*/
-
-toggleBtn.addEventListener("click", function(){
-    sidebar.classList.toggle("show-sidebar");
-});
-
+//icon
+const icons = document.querySelectorAll('.fa-beat');
+const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+randomIcon.classList.add('show-icon');
