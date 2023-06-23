@@ -61,6 +61,7 @@ header nav ul li {
     background-color: transparent;
     border-color: gray;
     border-radius: 25%;
+    box-shadow: 5px 5px 5px gray;
 }
 .icon2{
     width:200px;
@@ -70,6 +71,7 @@ header nav ul li {
     background-color: transparent;
     border-radius: 25%;
     border-color: gray;
+    box-shadow: 5px 5px 5px gray;
 }
 
 .icon3{
@@ -80,4 +82,5 @@ header nav ul li {
     background-color: transparent;
     border-color: gray;
     border-radius: 25%;
+    box-shadow: 5px 5px 5px gray;
 }
