@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #box {
+            width: 600px;
+            height: 600px;
+            resize: none;
+        }
+    </style>
+    <head>
+        <title>NEWTAB</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1> </h1>
+        <textarea id="box"></textarea>
+        <button onclick="updateFile()">확인</button>
+        <script src="READER.js"></script>
+        <script>
+            let a =window.name.split(".")
+            var val = document.getElementById("box")
+
+            if(a[a.length-1]===''){
+                a[a.length-1]="1"
+            }
+            else{
+                a[a.length-1] = String(Number(a[a.length-1]))+1
+            }
+            a = a.join(".")
+            
+            val.placeholder = `${String(a)}에 추가될 내용을 작성하세요.`
+            
+            function updateFile(event) {
+               READER().then(function (contents) {
+                var val = document.getElementById("box")
+                let str = contents.split("-_-_-\r\n")
+                let i
+                let arr =[]
+                let cont
+                for (i =0; i<str.length-1;i+=2){
+                    if (str[i] === window.name){
+                        arr = str.slice(0,i+2)
+                        arr[arr.length] = a
+                        var con = val.value 
+                        arr[arr.length] =con
+                        
+                        
+                        arr.push(str.slice(i+2,str.length).join("-_-_-\r\n"))
+                        console.log(arr, typeof(arr))
+                        cont = arr.join("-_-_-\r\n")+"-_-_-\r\n"
+                        
+                    }
+                }
+
+                window.close()
+               })
+              
+            }
+        </script>
+
+        
+    </body>
+</html>

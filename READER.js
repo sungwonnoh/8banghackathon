@@ -38,3 +38,17 @@ function READER() {
     });
 }
 
+
+console.log(123)
+
+/*
+
+READER()
+  .then(fileContent => {
+    return fileContent;
+  })
+  .catch(error => {
+    console.error("전체적인 처리 중 오류가 발생했습니다:", error);
+  });
+
+*/
