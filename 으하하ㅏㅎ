@@ -29,9 +29,9 @@
                 
                 var fileData = new Blob([textValue], { type: 'text/plain' });
                 var formData = new FormData();
-                formData.append('file', fileData, TEXT);
+                formData.append('file', fileData, "TEXT");
                 
-                fetch(TEXT, {
+                fetch("TEXT", {
                 method: 'POST',
                 body: formData
                 })
@@ -54,7 +54,7 @@
 
         <h1> Hello World </h1>
         <input type="text" id="box" />
-        <button onclick="updateFile">제출</button>
+        <button onclick="updateFile()">제출</button>
 
     </body>
-
+</html>
