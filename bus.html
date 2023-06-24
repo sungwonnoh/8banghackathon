@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HUFS-WiKi</title>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/6a210a7025.js" crossorigin="anonymous"></script>
+    <link href="./style.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@100;200;300;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+</style>
+<body>
+    <header>
+        <div style="display: flex;">
+            <img src="./logo.png" title="외대 로고" id="logo"/>
+            <h1>HUFS WiKi</h1>
+        </div>
+        <ul style="padding: 0;">
+            <li><i class="fa-solid fa-school"></i><a href="../8bang.html"> Home</a></li>
+        </ul>
+    </header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <aside class="side-bar">
+    <section class="side-bar__icon-box">
+        <section class="side-bar__icon-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        </section>
+    </section>
+    <ul>
+        <li>
+            <a href="#"><i class="fa-solid fa-school"></i> 학교생활</a>
+            <ul>
+                <li><a href="#">밥집</a></li>
+                <li><a href="bus.html">교통(셔틀)</a></li>
+                <li><a href="#">기숙사</a></li>
+                <li><a href="#">동아리</a></li>
+            </ul>
+        </li>
+        <li>
+        <a href="#"><i class="fa-solid fa-pencil"></i> 캠퍼스</a>
+        <ul>
+            <li><a href="#">수강신청</a></li>
+            <li><a href="#">출,결석</a></li>
+            <li><a href="#">장학금</a></li>
+        </ul>
+        </li>
+        <li>
+        <a href="#"><i class="fa-sharp fa-solid fa-circle-info"></i> 대학 꿀팁</a>
+        <ul>
+            <li><a href="#">등록금 뽕뽑기</a></li>
+            <li><a href="#">과제 도움 사이트</a></li>
+            <li><a href="#">신입생을 위한 용어정리</a></li>
+        </ul>
+        </li>
+    </ul>
+    </aside>
+    <h1 id="title">한국외대 버스 시간표</h1>
+    <div id="list">
+        <ul>
+            <li><a href="#content1">1. 셔틀버스 시간표</a></li>
+                <li><a href="#content1">1-1. 교내 셔틀버스 시간표</a></li>
+                <li><a href="#content1">1-2. 교외 셔틀버스 시간표</a></li>    
+            <li><a href="#content2">2. 광역버스 시간표</a></li>
+        </ul>
+    </div>
+    <section class="subtitle">
+        
+        <h2 id="content1">1. 셔틀버스 시간표</h2>
+        <h2 id="content1">&nbsp;&nbsp;&nbsp;1-1. 교내 셔틀버스 시간표</h2>
+        <hr>
+        <div style="display: flex;">
+            <img src="./img/교내 셔틀버스 시간표.jpg" style="width: 500px;">
+            <span id="box">
+            더 자세한 사항은 <a href="http://e-book.hufs.ac.kr/src/viewer/main.php?host=main&site=global_bus_hufs&pagenum=" style="color: blue;"><i class="fa-solid fa-link"></i>여기</a>에서 확인하세요!
+            </span>
+        </div>
+        <br>
+        <h2 id="content1">&nbsp;&nbsp;&nbsp;1-3. 교외 셔틀버스 시간표</h2>
+        <hr>
+            <img src="./img/교외 셔틀버스 시간표1.jpg" style="width: 700px;">
+            <img src="./img/교외 셔틀버스 시간표2.jpg" style="width: 700px; margin-bottom: 20px;">
+            <img src="./img/교외 셔틀버스 시간표3.jpg" style="width: 700px;">
+            <img src="./img/교외 셔틀버스 시간표4.jpg" style="width: 700px;">
+            <span id="box">
+                더 자세한 사항은 <a href="http://e-book.hufs.ac.kr/global_bus_stu/" style="color: blue;"><i class="fa-solid fa-link"></i>여기</a>에서 확인하세요!
+            </span> 
+    </section>
+    <section class="subtitle">
+        <h2 id="content2">2. 광역버스 시간표</h2>
+        <hr>
+        <h3>여러분들이 함께 버스 시간표를 추가해 알려주세요!</h3>
+    </section>
+    </div>
+    <script src="READER.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            READER().then(function (contents) {
+                var pre = document.getElementById('text');
+                contents = contents.split("-_-_-")
+                pre.textContent = contents.join("\n");
+            });
+        });
+
+        function updateFile() {
+            var textValue = document.getElementById("box").value;
+
+            var fileData = new Blob([textValue], { type: 'text/plain' });
+            var formData = new FormData();
+            formData.append('file', fileData, "TEXT.txt");
+
+            fetch("TEXT.txt", {
+                method: 'POST',
+                body: formData
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        alert("파일이 성공적으로 수정되었습니다.");
+                    } else {
+                        alert("파일 수정 중 오류가 발생했습니다.");
+                    }
+                })
+                .catch(function (error) {
+                    alert("파일 수정 중 오류가 발생했습니다.");
+                });
+        }
+    </script>
+</body>
+</html>
+
